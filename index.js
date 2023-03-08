@@ -11,6 +11,7 @@ const foodRouter = require('./routes/food');
 const hollywoodRouter = require('./routes/hollywood');
 const placesRouter = require('./routes/places');
 const technologyRouter = require('./routes/technology');
+const defaultRouter = require('./routes/default');
 
 
 const app = express();
@@ -28,8 +29,10 @@ app.use("/food",foodRouter);
 app.use("/hollywood",hollywoodRouter);
 app.use("/Travel",placesRouter);
 app.use("/technology",technologyRouter);
+app.use("/",defaultRouter)
 
 
 app.listen(CONSTANTS.PORT, ()=>{
     console.log(`Server is listening at http://localhost:${CONSTANTS.PORT}`)
 })
+5
